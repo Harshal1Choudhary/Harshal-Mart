@@ -44,31 +44,38 @@ const Trusted = () => {
 };
 
 const Wrapper = styled.section`
-  padding: 9rem 0;
-  background-color: ${({ theme }) => theme.colors.bg};
+  padding: 6rem 0 9rem;
+  background-color: ${({ theme }) => theme.colors.section_bg};
 
-  .brand-section {
-    padding: 12rem 0 0 0;
-  }
   h3 {
     text-align: center;
-    text-transform: capitalize;
+    text-transform: uppercase;
     color: ${({ theme }) => theme.colors.text};
-    font-size: 2rem;
-    font-weight: bold;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
   }
 
   img {
-    min-width: 10rem;
-    height: 10rem;
+    max-height: 5rem;
+    width: auto;
+    filter: grayscale(100%);
+    opacity: 0.55;
+    transition: filter 0.2s ease, opacity 0.2s ease;
+
+    &:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
   }
 
   .brand-section-slider {
-    margin-top: 3.2rem;
+    margin-top: 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: row;
+    gap: 3rem;
+    flex-wrap: wrap;
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {

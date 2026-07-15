@@ -15,22 +15,25 @@ import Footer from "./components/Footer";
 const App = () => {
   const theme = {
     colors: {
-      heading: "rgb(24 24 29)",
-      text: "rgba(29 ,29, 29, .8)",
+      heading: "#16161d",
+      text: "#5b5b73",
       white: "#fff",
-      black: " #212529",
-      helper: "#8490ff",
+      black: "#16161d",
+      helper: "#6254f3",
+      helperDark: "#4b3fd4",
 
-      bg: "#F6F8FA",
+      bg: "#ffffff",
+      section_bg: "#f6f7fb",
       footer_bg: "#0a1435",
-      btn: "rgb(98 84 243)",
-      border: "rgba(98, 84, 243, 0.5)",
-      hr: "#ffffff",
-      gradient:
-        "linear-gradient(0deg, rgb(132 144 255) 0%, rgb(98 189 252) 100%)",
+      btn: "#6254f3",
+      border: "#e6e8f0",
+      hr: "#e6e8f0",
+      gradient: "linear-gradient(135deg, #6254f3 0%, #8f7bff 100%)",
       shadow:
-        "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;",
-      shadowSupport: " rgba(0, 0, 0, 0.16) 0px 1px 4px",
+        "0 1px 3px rgba(16, 24, 40, 0.06), 0 1px 2px rgba(16, 24, 40, 0.04)",
+      shadowSupport: "0 10px 30px rgba(16, 24, 40, 0.10)",
+      cardShadow: "0 6px 24px rgba(16, 24, 40, 0.08)",
+      radius: "14px",
     },
     media: {
       mobile: "768px",

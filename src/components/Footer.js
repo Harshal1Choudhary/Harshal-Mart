@@ -6,94 +6,104 @@ import { FaDiscord, FaInstagram, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <>
-      <Wrapper>
-        <section className="contact-short">
-          <div className="grid grid-two-column">
-            <div>
-              <h3>Ready to get started?</h3>
-              <h3>Talk to us today</h3>
-            </div>
-
-            <div>
-              <Button className="btn hireme-btn">
-                <NavLink to="/"> Get Started </NavLink>
-              </Button>
-            </div>
-          </div>
-        </section>
-        {/* footer section */}
-
-        <footer>
-          <div className="container grid grid-four-column">
-            <div className="footer-about">
-              <h3>Harshal Mart</h3>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p>
-            </div>
-            <div className="footer-subscribe">
-              <h3>Subscribe to get important updates</h3>
-              <form action="#">
-                <input type="email" name="email" placeholder="YOUR E-MAIL" />
-
-                <input type="submit" value="subscribe" />
-              </form>
-            </div>
-            <div className="footer-social">
-              <h3>Follow Us</h3>
-              <div className="footer-social--icons">
-                <div>
-                  <FaDiscord className="icons" />
-                </div>
-                <div>
-                  <FaInstagram className="icons" />
-                </div>
-                <div>
-                  <a
-                    href="https://www.youtube.com/channel/UCwfaAHy4zQUb2APNOGXUCCA"
-                    target="_blank"
-                  >
-                    <FaYoutube className="icons" />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="footer-contact">
-              <h3>Call Us</h3>
-              <h3>+91 12345678978</h3>
-            </div>
+    <Wrapper>
+      <section className="contact-short">
+        <div className="grid grid-two-column">
+          <div>
+            <h3>Ready to start shopping?</h3>
+            <p>Browse the catalog and find something you'll love today.</p>
           </div>
 
-          <div className="footer-bottom--section">
-            <hr />
-            <div className="container grid grid-two-column ">
-              <p>
-                @{new Date().getFullYear()} HarshalMart. All Rights Reserved
-              </p>
+          <div>
+            <NavLink to="/products">
+              <Button>Get Started</Button>
+            </NavLink>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div className="container grid grid-four-column">
+          <div className="footer-about">
+            <h3>Harshal Mart</h3>
+            <p>
+              A modern storefront built with React — fast delivery, secure
+              checkout, and a catalog you'll enjoy browsing.
+            </p>
+          </div>
+          <div className="footer-subscribe">
+            <h3>Get product updates</h3>
+            <form action="#" onSubmit={(e) => e.preventDefault()}>
+              <input type="email" name="email" placeholder="Your e-mail" />
+              <input type="submit" value="Subscribe" />
+            </form>
+          </div>
+          <div className="footer-social">
+            <h3>Follow Us</h3>
+            <div className="footer-social--icons">
               <div>
-                <p>PRIVACY POLICY</p>
-                <p>TERMS & CONDITIONS</p>
+                <FaDiscord className="icons" />
+              </div>
+              <div>
+                <FaInstagram className="icons" />
+              </div>
+              <div>
+                <a
+                  href="https://www.youtube.com/channel/UCwfaAHy4zQUb2APNOGXUCCA"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FaYoutube className="icons" />
+                </a>
               </div>
             </div>
           </div>
-        </footer>
-      </Wrapper>
-    </>
+          <div className="footer-contact">
+            <h3>Call Us</h3>
+            <p>+91 12345 67897</p>
+          </div>
+        </div>
+
+        <div className="footer-bottom--section">
+          <hr />
+          <div className="container grid grid-two-column">
+            <p>© {new Date().getFullYear()} Harshal Mart. All Rights Reserved.</p>
+            <div className="footer-legal">
+              <p>Privacy Policy</p>
+              <p>Terms &amp; Conditions</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </Wrapper>
   );
 };
 
 const Wrapper = styled.section`
-  .iSIFGq {
-    margin: 0;
-  }
-
   .contact-short {
-    max-width: 60vw;
+    max-width: 70rem;
     margin: auto;
-    padding: 5rem 10rem;
-    background-color: ${({ theme }) => theme.colors.bg};
-    border-radius: 1rem;
+    padding: 4rem 5rem;
+    background: ${({ theme }) => theme.colors.gradient};
+    border-radius: 2rem;
     box-shadow: ${({ theme }) => theme.colors.shadowSupport};
     transform: translateY(50%);
+    position: relative;
+    z-index: 2;
+
+    h3 {
+      color: #fff;
+      font-size: 2.2rem;
+    }
+    p {
+      color: rgba(255, 255, 255, 0.85);
+      margin-top: 0.6rem;
+    }
+
+    .grid {
+      align-items: center;
+      gap: 3rem;
+    }
 
     .grid div:last-child {
       justify-self: end;
@@ -102,50 +112,75 @@ const Wrapper = styled.section`
   }
 
   footer {
-    padding: 14rem 0 9rem 0;
+    padding: 16rem 0 6rem 0;
     background-color: ${({ theme }) => theme.colors.footer_bg};
+
     h3 {
-      color: ${({ theme }) => theme.colors.hr};
-      margin-bottom: 2.4rem;
+      color: #fff;
+      margin-bottom: 2rem;
+      font-size: 1.9rem;
     }
     p {
-      color: ${({ theme }) => theme.colors.white};
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 1.5rem;
+      line-height: 1.6;
     }
+
+    input[type="email"] {
+      max-width: 24rem;
+    }
+
     .footer-social--icons {
       display: flex;
-      gap: 2rem;
+      gap: 1.4rem;
 
       div {
-        padding: 1rem;
+        display: grid;
+        place-items: center;
+        width: 4.4rem;
+        height: 4.4rem;
         border-radius: 50%;
-        border: 2px solid ${({ theme }) => theme.colors.white};
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        transition: background-color 0.2s ease, border-color 0.2s ease;
+        cursor: pointer;
+
+        &:hover {
+          background-color: ${({ theme }) => theme.colors.helper};
+          border-color: ${({ theme }) => theme.colors.helper};
+        }
 
         .icons {
-          color: ${({ theme }) => theme.colors.white};
-          font-size: 2.4rem;
-          position: relative;
-          cursor: pointer;
+          color: #fff;
+          font-size: 2.1rem;
         }
       }
     }
   }
 
   .footer-bottom--section {
-    padding-top: 9rem;
+    padding-top: 6rem;
 
     hr {
-      margin-bottom: 2rem;
-      color: ${({ theme }) => theme.colors.hr};
-      height: 0.1px;
+      margin-bottom: 2.4rem;
+      border: none;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 2.4rem;
+      justify-self: end;
     }
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     .contact-short {
-      max-width: 80vw;
+      max-width: 85vw;
       margin: 4.8rem auto;
       transform: translateY(0%);
       text-align: center;
+      padding: 3.2rem;
 
       .grid div:last-child {
         justify-self: center;
@@ -153,11 +188,15 @@ const Wrapper = styled.section`
     }
 
     footer {
-      padding: 9rem 0 9rem 0;
+      padding: 6rem 0;
     }
 
     .footer-bottom--section {
-      padding-top: 4.8rem;
+      padding-top: 4rem;
+
+      .footer-legal {
+        justify-self: start;
+      }
     }
   }
 `;
